@@ -1,6 +1,7 @@
 import copy
 
-def most_common_bit(data: list, x:int):
+
+def most_common_bit(data: list, x: int):
     ones, zeroes = 0, 0
     for element in data:
         first_element = element[x]
@@ -10,18 +11,21 @@ def most_common_bit(data: list, x:int):
             zeroes += 1
     return '1' if zeroes <= ones else '0'
 
+
 def convert_to_dec(bin_num):
     bin_num = [str(x) for x in bin_num]
     bin_num = "".join(bin_num)
     bin_num = int(bin_num, 2)
     return bin_num
 
-def filter_row(data: list, copied_data:list, x:int, y:int):
+
+def filter_row(data: list, copied_data: list, x: int, y: int):
     for element in data:
         if element[x] != y:
             if element in copied_data:
                 copied_data.remove(element)
     return copied_data
+
 
 with open('inputs/day3.txt', 'r') as f:
     data = [list(line.strip()) for line in f]
@@ -34,7 +38,7 @@ gamma, epsilon = [], []
 for i in range(len(data[0])):
     num = most_common_bit(data, i)
     gamma.append(num)
-gamma =  "".join(gamma)
+gamma = "".join(gamma)
 for element in gamma:
     if element == '1':
         epsilon.append('0')

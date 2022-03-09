@@ -1,5 +1,5 @@
 
-with open("inputs/day1.txt", "r") as f: 
+with open("inputs/day1.txt", "r") as f:
     data = [int(line) for line in f]
 
 increasments = 0
@@ -9,10 +9,13 @@ for i in range(len(data)):
 print(increasments)
 
 triples = []
+
+
 def three_seg(x, number_list):
     if x+2 < len(number_list):
         new_segment = [number_list[x], number_list[x+1], number_list[x+2]]
         triples.append(new_segment)
+
 
 file_content = [three_seg(x, data) for x in range(len(data))]
 
