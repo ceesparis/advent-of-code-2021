@@ -59,7 +59,6 @@ class School:
         self.age -= 1
     
 
-
 def new_day(fishes: list) -> list:
     new_fishes = []
     for fish in fishes:

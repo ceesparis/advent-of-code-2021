@@ -1,4 +1,3 @@
-
 with open("inputs/day1.txt", "r") as f:
     data = [int(line) for line in f]
 

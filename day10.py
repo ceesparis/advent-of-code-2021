@@ -86,12 +86,3 @@ for part in missing_parts:
 scores = sorted(scores)
 middle = len(scores)//2
 print(scores[middle])
-
-
-
-
-
-
-
-
-

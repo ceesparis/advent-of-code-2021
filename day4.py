@@ -1,5 +1,4 @@
 import copy
-from xmlrpc.client import Boolean
 
 
 class Board:
@@ -13,7 +12,7 @@ class Board:
             self.columns.append(column)
             column = []
 
-    def check_if_won(self, numbers: list) -> Boolean:
+    def check_if_won(self, numbers: list):
         for row in self.rows:
             if set(row).issubset(numbers):
                 return True
