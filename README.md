@@ -1,6 +1,6 @@
 # advent of code 2021 
 
-Here I post my solutions of AoC 2021 written in Python 3. I am still learning programming, so I also write down when I learn something new during the puzzle. 
+Here I post my solutions of AoC 2021 written in Python 3. 
 
 |  Day  |  Stars | Things I learned  |
 |---|---|---|
