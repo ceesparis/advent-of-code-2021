@@ -1,7 +1,7 @@
 import copy
 
 
-def most_common_bit(data: list, x: int):
+def most_common_bit(data: list, x: int) -> str:
     ones, zeroes = 0, 0
     for element in data:
         first_element = element[x]
@@ -12,14 +12,14 @@ def most_common_bit(data: list, x: int):
     return '1' if zeroes <= ones else '0'
 
 
-def convert_to_dec(bin_num):
+def convert_to_dec(bin_num: list) -> list:
     bin_num = [str(x) for x in bin_num]
     bin_num = "".join(bin_num)
     bin_num = int(bin_num, 2)
     return bin_num
 
 
-def filter_row(data: list, copied_data: list, x: int, y: int):
+def filter_row(data: list, copied_data: list, x: int, y: int) -> list:
     for element in data:
         if element[x] != y:
             if element in copied_data:

@@ -37,7 +37,7 @@ def complete(line: str) -> str:
                 continue
     return cur_op
 
-def calc_score(line):
+def calc_score(line: list) -> int:
     score = 0
     while line:
         x = line.pop()

@@ -1,4 +1,5 @@
 import copy
+from xmlrpc.client import Boolean
 
 
 class Board:
@@ -12,7 +13,7 @@ class Board:
             self.columns.append(column)
             column = []
 
-    def check_if_won(self, numbers):
+    def check_if_won(self, numbers: list) -> Boolean:
         for row in self.rows:
             if set(row).issubset(numbers):
                 return True
@@ -21,7 +22,7 @@ class Board:
                 return True
         return False
 
-    def determine_score(self, numbers):
+    def determine_score(self, numbers: list) -> int:
         tile_score = 0
         for row in self.rows:
             for number in row:
@@ -43,7 +44,7 @@ class Game:
                 return board
         return False
 
-    def new_number(self):
+    def new_number(self) -> None:
         number = self.winning_numbers.pop(0)
         self.played_numbers.append(number)
 

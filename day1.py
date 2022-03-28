@@ -11,7 +11,7 @@ print(increasments)
 triples = []
 
 
-def three_seg(x, number_list):
+def three_seg(x: int, number_list: list) -> None:
     if x+2 < len(number_list):
         new_segment = [number_list[x], number_list[x+1], number_list[x+2]]
         triples.append(new_segment)

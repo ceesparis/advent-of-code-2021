@@ -1,4 +1,5 @@
-import math 
+import math
+from xmlrpc.client import Boolean 
 
 with open('inputs/day9.txt', 'r') as f:
     data = [line.split() for line in f.read().strip().split("\n")]
@@ -11,7 +12,7 @@ class Grid:
         self.bassin = []
         self.bassins = []
 
-    def find_surroundings(self, x, y):
+    def find_surroundings(self, x: int, y: int) -> list:
         points2compare = []
         location_points2compare = []
         if x > 0:
@@ -28,7 +29,7 @@ class Grid:
             location_points2compare.append((x, y+1))
         return [points2compare, location_points2compare]
 
-    def check_abs_lows(self):
+    def check_abs_lows(self) -> list:
         absolute_lows = []
         low_points = []
         for x in range(len(self.data[0])):
@@ -41,12 +42,12 @@ class Grid:
                     low_points.append((y, x))
         return [absolute_lows, low_points]
 
-    def check_point(self, x, y):
+    def check_point(self, x: int, y: int) -> Boolean:
         if self.data[y][x] != 9:
             return True
         return False
 
-def dfs(grid, x, y, counter):
+def dfs(grid: list, x: int, y: int, counter: int) -> int:
     n = 100
     m = 100
     if y < 0 or y >= n or x < 0 or x >= m or grid[y][x] == 'x' or grid[y][x] == 9:
@@ -62,7 +63,7 @@ def dfs(grid, x, y, counter):
     return counter
     
 
-def check_bassins(grid, lowest_points):
+def check_bassins(grid: list, lowest_points: list) -> list:
     bassins = []
     for lowest_point in lowest_points:
         counter = []

@@ -1,5 +1,3 @@
-from lib2to3.pygram import pattern_grammar
-
 
 with open('inputs/day8.txt', 'r') as f:
     data = [line.strip().split(" ") for line in f.read().strip().split("\n")]
@@ -20,10 +18,9 @@ print(x)
 signal_patterns = [(line[0]) for line in data]
 signal_patterns = [[set(x) for x in line] for line in signal_patterns]
 outputs = [[set(x) for x in line] for line in outputs]
-# print(signal_patterns[0])
 
  
-def get_known(signal_pattern):
+def get_known(signal_pattern: list) -> list:
     four, one, seven, eight = set, set, set, set
     for pattern in signal_pattern:
         if len(pattern) == 4:
