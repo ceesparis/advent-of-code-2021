@@ -1,4 +1,4 @@
-# advent of code 2021 
+# Advent of Code 2021 
 
 Here I post my solutions of AoC 2021 written in Python 3. 
 
